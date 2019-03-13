@@ -1,26 +1,36 @@
 {
-  "name": "@openstfoundation/openst-tokens",
-  "version": "0.0.0",
-  "description": "OpenST Tokens provides token and related smart contracts for token economies.",
+  "name": "@openstfoundation/brandedtoken-contracts",
+  "version": "0.10.0-beta.1",
+  "description": "BrandedToken Contracts provides token and related smart contracts for token economies.",
   "keywords": [
     "OpenST",
     "OST",
     "Simple Token",
     "Token Economy",
     "Ethereum",
-    "EIP20"
+    "EIP20",
+    "Branded Token"
   ],
   "homepage": "https://openst.org",
-  "author": "OpenST Foundation Ltd.",
-  "license": "LGPL-3.0",
+  "author": "OpenST Limited",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/OpenSTFoundation/openst-tokens.git"
+    "url": "https://github.com/OpenSTFoundation/brandedtoken-contracts.git"
   },
   "bugs": {
-    "url": "https://github.com/OpenSTFoundation/openst-tokens/issues"
+    "url": "https://github.com/OpenSTFoundation/brandedtoken-contracts/issues"
   },
-  "scripts": {},
+  "scripts": {
+    "build-package": "node tools/build_package.js",
+    "compile-all": "truffle compile --all",
+    "test": "truffle test",
+    "prepack": "npm run compile-all && npm run build-package"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "devDependencies": {
     "abi-decoder": "1.2.0",
     "assert": "1.4.1",
@@ -31,9 +41,8 @@
     "eslint-plugin-import": "2.14.0",
     "ethereumjs-util": "5.2.0",
     "ganache-cli": "6.1.8",
-    "solc": "0.4.23",
     "solidity-coverage": "0.5.11",
-    "truffle": "5.0.0-beta.0",
+    "truffle": "5.0.1",
     "web3": "1.0.0-beta.36"
   }
 }
